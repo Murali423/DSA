@@ -1,0 +1,18 @@
+def findpower(a,n):
+    if n == 1:
+        return a 
+    else:
+        mid = n//2
+        b = findpower(a,mid)
+        c = b * b
+        if n%2==0:
+            return c 
+        else:
+            return c*a
+
+
+
+a= 2
+n = 65
+c = findpower(a,n)
+print(c)

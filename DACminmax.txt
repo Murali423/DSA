@@ -1,0 +1,32 @@
+# Online Python - IDE, Editor, Compiler, Interpreter
+def findminmax(arr,i,j):
+    if i == j:
+        max = arr[i]
+        min= arr[j]
+        return min,max
+    if i == j-1:
+        if arr[i] < arr[j]:
+            max = arr[j]
+            min = arr[i]
+        else:
+            max = arr[i]
+            min = arr[j]
+        return min,max
+    mid = (i+j)//2
+    min1,max1 = findminmax(arr,i,mid)
+    min2,max2 = findminmax(arr,mid+1,j)
+    if min1 < min2:
+        min = min1
+    else:
+        min = min2
+    if max1 < max2:
+        max = max2
+    else:
+        max = max1
+    return min,max
+    
+    
+arr = [50,90,170,25,15,7,190,4,59,1]
+n = len(arr)
+min,max = findminmax(arr,0,n-1)
+print(min,max)
