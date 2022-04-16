@@ -1,0 +1,12 @@
+a = [3,2,66,77,88.90]
+#time complexit :o(n)
+#space compelxity :o(1)
+def lin_search(arr,ele):
+    n = len(arr)
+    for i in range(n):
+        if arr[i]== ele:
+            return i 
+    return -1
+
+x = lin_search(a,66)
+print(x)

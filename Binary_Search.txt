@@ -1,0 +1,25 @@
+# Binary Search
+def Binary_ser(arr,i,j,x):
+    #small problem
+    if i == j:
+        if a[i] == x:
+            return i
+        else:
+            return -1
+    else:
+        mid = i + (j-i)//2
+        if a[mid] == x:
+            return mid
+        elif a[mid] < x:
+            return Binary_ser(arr,mid+1,j,x)
+        else:
+           return Binary_ser(arr,i,mid-1,x)
+
+
+#Driver code
+a = [3,6,9,13,17,22,66,77,88,90]
+i = 0
+j = len(a)-1
+x = 7
+res = Binary_ser(a,i,j,x)
+print('Index of element is:',res)
