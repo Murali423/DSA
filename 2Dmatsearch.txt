@@ -1,0 +1,22 @@
+
+# Online Python - IDE, Editor, Compiler, Interpreter
+def search2Dmat(a,target):
+    i =0 
+    j = len(a[0])-1
+    n = len(a)
+    while(i<n and j >= 0):
+        if a[i][j] == target:
+            return i,j
+        elif a[i][j] > target:
+            j -= 1 
+        else:
+            i += 1 
+    return -1,-1
+
+
+#driver Code
+a = [[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]]
+print(len(a))
+target = 77 
+i,j = search2Dmat(a,target)
+print("result is:",i,j)
